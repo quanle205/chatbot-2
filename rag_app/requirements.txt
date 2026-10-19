@@ -1,0 +1,13 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+streamlit
+pymupdf>=1.24
+python-docx
+openpyxl
+rank_bm25
+numpy
+openai
+anthropic
+# --- Embedding (BERT/XLM-R), Vector DB, Re-ranking theo kế hoạch ---
+torch
+sentence-transformers>=3.0
+faiss-cpu

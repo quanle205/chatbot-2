@@ -1,0 +1,13 @@
+id,question,relevant_snippets,relevant_pages,gold_numbers,gold_answer
+1,Tổng tài sản tại ngày 31/03/2026 là bao nhiêu?,33.067.716.327.546,,33.067.716.327.546,"33.067.716.327.546 VND"
+2,Doanh thu thuần quý I/2026 là bao nhiêu?,167.923.170.830,,167.923.170.830,"167.923.170.830 VND"
+3,Lợi nhuận gộp về bán hàng và cung cấp dịch vụ quý I/2026?,134.766.471.688,,134.766.471.688,"134.766.471.688 VND"
+4,Biên lợi nhuận gộp quý I/2026 là bao nhiêu phần trăm?,134.766.471.688|167.923.170.830,,80.25,"134.766.471.688 / 167.923.170.830 = 80.25%"
+5,Lợi nhuận sau thuế thu nhập doanh nghiệp quý I/2026 là bao nhiêu?,1.828.028.020.122,,1.828.028.020.122,"1.828.028.020.122 VND"
+6,Vì sao doanh thu thuần quý I/2026 giảm so với cùng kỳ năm trước?,,FPT_Baocaotaichinh_Q1_2026_Congtyme.pdf:7,19.366,"Giảm 10% (19.366 triệu đồng) do doanh thu từ phần chi phí quản lý đã chi hộ và phân bổ cho các đơn vị thành viên giảm"
+7,Lợi nhuận sau thuế tăng bao nhiêu phần trăm so với cùng kỳ và động lực chính là gì?,,FPT_Baocaotaichinh_Q1_2026_Congtyme.pdf:7,129,"Tăng 129% (1.029 tỷ đồng); chủ yếu do doanh thu hoạt động tài chính tăng 1.041 tỷ đồng (cổ tức, lợi nhuận được chia từ công ty con tăng 995 tỷ)"
+8,Lưu chuyển tiền thuần từ hoạt động kinh doanh lũy kế quý I/2026?,401.953.448.193,,401.953.448.193,"(401.953.448.193) VND — âm"
+9,Vay và nợ thuê tài chính ngắn hạn tại 31/03/2026?,6.327.887.440.200,,6.327.887.440.200,"6.327.887.440.200 VND"
+10,Vốn chủ sở hữu tại 31/03/2026 là bao nhiêu?,25.310.178.506.364,,25.310.178.506.364,"25.310.178.506.364 VND"
+11,Tiền và các khoản tương đương tiền tại 31/03/2026?,2.231.448.721.940,,2.231.448.721.940,"2.231.448.721.940 VND"
+12,Tổng nợ phải trả tại 31/03/2026?,7.757.537.821.182,,7.757.537.821.182,"7.757.537.821.182 VND"
