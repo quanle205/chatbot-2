@@ -197,21 +197,24 @@ if q:
         hits = index.search(search_q, top_k=top_k, alpha=alpha, mode=mode, rerank=rerank)
         if rerank and index.rerank_error:
             st.caption(f"Không bật được re-ranking ({index.rerank_error}); dùng thứ tự truy xuất gốc.")
+        llm_failed = False
         try:
             with st.spinner("Đang phân tích..."):
                 text, calcs = llm.answer(q, hits, h[-6:])
         except Exception as e:
+            llm_failed = True
             text, calcs = f"Lỗi gọi LLM: {e}\n\nKiểm tra `LLM_API_KEY` và `LLM_MODEL` trong Secrets.", []
         st.markdown(text)
-        grounding = llm.grounding_check(text, hits, calcs)
-        render_grounding(grounding)
+        grounding = None if llm_failed else llm.grounding_check(text, hits, calcs)  # không kiểm tra số liệu trên thông báo lỗi
+        if grounding:
+            render_grounding(grounding)
         if calcs:
             with st.expander("🧮 Phép tính đã thực hiện"):
                 for e, r in calcs:
                     st.code(f"{e} = {r}")
         render_sources(hits, text, len(st.session_state.chat))
         baseline, note = None, ""
-        if compare:
+        if compare and not llm_failed:
             try:
                 with st.spinner("Đang hỏi LLM thuần để so sánh..."):
                     baseline = llm.answer_baseline(q)
@@ -223,6 +226,9 @@ if q:
                     st.caption(note)
             except Exception as e:
                 st.caption(f"Không gọi được LLM thuần: {e}")
+    if llm_failed:  # không đưa lỗi vào lịch sử hội thoại
+        st.session_state.chat.append({"role": "assistant", "content": text, "hits": hits})
+        st.stop()
     h.append({"role": "user", "content": f"CÂU HỎI: {q}"})
     h.append({"role": "assistant", "content": text})
     st.session_state.chat.append({"role": "assistant", "content": text, "hits": hits, "grounding": grounding,
